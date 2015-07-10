@@ -2,6 +2,7 @@
 A PHP class to handle the error messages that are displayed to a user. Can be used inside other classes to display messages back to the user.
 
 # How to use
+The Error class contains only static methods, so it does not have to be initiated to be used.
 
 ## Used inside a class
 ```PHP
@@ -42,7 +43,6 @@ If no errors have been added, a success message will be displayed.
 
 ## NOT displaying a success message
 If you do not want to display a success message, simply put a 0 (ZERO) into the displayErrors() method
-
 ```PHP
 return Errors::displayErrors(0);
 ```
