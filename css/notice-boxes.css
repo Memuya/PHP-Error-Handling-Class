@@ -1,0 +1,23 @@
+.notice-box {
+	padding: 20px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	color: #999;
+	margin-bottom: 20px;
+	font-size: 12px;
+}
+
+.green-notice {
+	color: green;
+	background: rgba(0,255,0,.1);
+	border: 1px solid #a6ca8a;
+}
+
+.red-notice {
+	color: #B20000;
+	border: 1px solid #f5aca6;
+	background: rgba(255,0,0,.1);
+}
