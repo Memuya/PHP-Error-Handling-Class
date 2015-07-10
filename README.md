@@ -29,6 +29,12 @@ class Person {
 }
 ```
 
+```PHP
+$person = new Person();
+$person->add("Bob", 26);
+```
+## Output
+
 If an error is being displayed it will show.
 ![Error Message](http://i.imgur.com/ksh5y8Q.png)
 
