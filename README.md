@@ -31,7 +31,7 @@ class Person {
 
 ```PHP
 $person = new Person();
-$person->add("Bob", 26);
+echo $person->add("Bob", 26); //Echo to display messages
 ```
 
 ## Output
