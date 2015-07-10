@@ -33,6 +33,13 @@ class Person {
 $person = new Person();
 $person->add("Bob", 26);
 ```
+## NOT displaying a success message
+If you do not want to display a success message, simply put a 0 (ZERO) into the displayErrors() method
+
+```PHP
+return Errors::displayErrors(0);
+```
+
 ## Output
 
 If an error is being displayed it will show.
