@@ -60,7 +60,7 @@ class Errors {
 	* 
 	* @param string $message
 	*/
-	public function add($message) {
+	public static function add($message) {
 		self::$errors[] = $message;
 	}
 	
