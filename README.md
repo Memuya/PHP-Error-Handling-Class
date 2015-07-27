@@ -14,9 +14,39 @@ Errors::add("All fields are required");
 return Errors::displayErrors(0);
 ```
 
-You may also pass a succes message to be displayed if no errors were added
+You may also pass a success message to be displayed if no errors were added.
 ```PHP
 return Errors::displayErrors("Person successfully added!");
+```
+
+## Example (used inside a class)
+```PHP
+//Require the Error class if needed
+require_once 'Error.php';
+
+class Person {
+  private $name, $age;
+  
+  public function add($name, $age) {
+    $this->name = $name;
+    $this->age = $age;
+    
+    if(empty($this->name) || empty($this->age)) {
+      //Add an error
+      Errors::add("All fields are required");
+    } else {
+      //Add user here
+    }
+    
+    //Display all errors to user or a success message
+    return Errors::displayErrors("Person successfully added!");
+  }
+}
+```
+
+```PHP
+$person = new Person();
+echo $person->add("Bob", 26); //Echo to display messages
 ```
 
 ## Output
