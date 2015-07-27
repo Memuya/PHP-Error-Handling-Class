@@ -1,4 +1,11 @@
 <?php
+/**
+ * The Errors class can be used to help display error messages to a users.
+ * 
+ * @Version 1.0
+ * @Year 2015
+ * @Author Mehmet Uyanik
+ */
 class Errors {
 	private static $errors = [];
 
