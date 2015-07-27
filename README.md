@@ -4,34 +4,19 @@ A PHP class to handle the error messages that are displayed to a user. Can be us
 # How to use
 The Error class contains only static methods, so it does not have to be initiated to be used.
 
-## Used inside a class
+## 1. Add an error
 ```PHP
-//Require Error class if needed
-require_once 'Error.php';
-
-class Person {
-  private $name, $age;
-  
-  public function add($name, $age) {
-    $this->name = $name;
-    $this->age = $age;
-    
-    if(empty($this->name) || empty($this->age)) {
-      //Add an error
-      Errors::add("All fields are required");
-    } else {
-      //Add user here
-    }
-    
-    //Display all errors to user or a success message
-    return Errors::displayErrors("Person successfully added!");
-  }
-}
+Errors::add("All fields are required");
 ```
 
+## 2. Return the list of errors
 ```PHP
-$person = new Person();
-echo $person->add("Bob", 26); //Echo to display messages
+return Errors::displayErrors(0);
+```
+
+You may also pass a succes message to be displayed if no errors were added
+```PHP
+return Errors::displayErrors("Person successfully added!");
 ```
 
 ## Output
