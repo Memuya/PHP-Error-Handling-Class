@@ -2,10 +2,12 @@
 /**
  * The Errors class can be used to help display error messages to a users.
  * 
- * @Version 1.0
+ * @Version 1.1
  * @Year 2015
  * @Author Mehmet Uyanik
  */
+namespace Error;
+
 class Errors {
 	private static $errors = [];
 
@@ -30,7 +32,7 @@ class Errors {
 			($style !== 0) ? $m .='<div class="notice-box red-notice">' : null;
 			
 			foreach(self::$errors as $e)
-				$m .= $e."<br>";
+				$m .= (!empty($e)) ? $e."<br>" : null;
 			
 			($style !== 0) ? $m .= '</div>' : null;
 			
@@ -69,6 +71,16 @@ class Errors {
 	*/
 	public static function add($message) {
 		self::$errors[] = $message;
+	}
+
+	/**
+	* Clear the errors array
+	*/
+	public static function clear() {
+		//self::$errors = [];
+		if(self::hasErrors())
+			for($x = 0; $x < self::getCount(); $x++)
+				self::$errors[$x] = "";
 	}
 	
 }
