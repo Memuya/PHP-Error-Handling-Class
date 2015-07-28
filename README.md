@@ -13,12 +13,12 @@ or you can use it inline
 Error\Errors::add("Error message here");
 ```
 
-## 1. Add an error
+## 2. Add an error
 ```PHP
 Error\Errors::add("All fields are required");
 ```
 
-## 2. Return the list of errors
+## 3. Return the list of errors
 ```PHP
 return Error\Errors::displayErrors(0);
 ```
