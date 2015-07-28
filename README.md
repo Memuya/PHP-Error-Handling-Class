@@ -4,19 +4,28 @@ A PHP class to handle the error messages that are displayed to a user. Can be us
 # How to use
 The Error class contains only static methods, so it does not have to be initiated to be used.
 
+## 1. Use the namespace
+```PHP
+use Error\Errors;
+```
+or you can use it inline
+```PHP
+Error\Errors::add("Error message here");
+```
+
 ## 1. Add an error
 ```PHP
-Errors::add("All fields are required");
+Error\Errors::add("All fields are required");
 ```
 
 ## 2. Return the list of errors
 ```PHP
-return Errors::displayErrors(0);
+return Error\Errors::displayErrors(0);
 ```
 
 You may also pass a success message to be displayed if no errors were added.
 ```PHP
-return Errors::displayErrors("Person successfully added!");
+return Error\Errors::displayErrors("Person successfully added!");
 ```
 
 ## Example (used inside a class)
@@ -33,13 +42,13 @@ class Person {
     
     if(empty($this->name) || empty($this->age)) {
       //Add an error
-      Errors::add("All fields are required");
+      Error\Errors::add("All fields are required");
     } else {
       //Add user here
     }
     
     //Display all errors to user or a success message
-    return Errors::displayErrors("Person successfully added!");
+    return Error\Errors::displayErrors("Person successfully added!");
   }
 }
 ```
@@ -59,5 +68,11 @@ If no errors have been added, a success message will be displayed.
 ## NOT displaying a success message
 If you do not want to display a success message, simply put a 0 (ZERO) into the displayErrors() method
 ```PHP
-return Errors::displayErrors(0);
+return Error\Errors::displayErrors(0);
+```
+
+## Clear the $errors array
+Using the clear() method allows you to clear the array midway through a page.
+```PHP
+Error\Errors::clear();
 ```
