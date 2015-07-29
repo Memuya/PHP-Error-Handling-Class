@@ -80,7 +80,7 @@ class Errors {
 		//self::$errors = [];
 		if(self::hasErrors())
 			for($x = 0; $x < self::getCount(); $x++)
-				self::$errors[$x] = "";
+				self::$errors[$x] = null;
 	}
 	
 }
