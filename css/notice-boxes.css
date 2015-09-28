@@ -22,3 +22,9 @@
 	border: 1px solid #f5aca6;
 	background: rgba(255,0,0,.1);
 }
+
+.yellow-notice {
+	color: #999900;
+	border: 1px solid #CCCC00;
+	background: rgba(255,255,0,.1);
+}
