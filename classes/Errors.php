@@ -11,6 +11,7 @@ namespace Error;
 
 class Errors {
 	private static $errors = [];
+
 	/**
 	* Check if an error exist inside the errors array
 	*/
@@ -38,6 +39,10 @@ class Errors {
 					break;
 				case 2:
 					$css = 'yellow-notice';
+					break;
+				case default:
+					$css = 'red-notice';
+					break;
 			}
 
 			($style !== 0) ? $m .='<div class="notice-box '.$css.'">' : null;
@@ -66,8 +71,9 @@ class Errors {
 		if(self::hasErrors())
 			return self::getErrors($style);
 		else
-			return ($message === 0) ? null : (($style === 1) ? '<div class="notice-box green-notice">'.$message.'</div>' : $message);
+			return ($message === 0) ? null : (($style !== 0) ? '<div class="notice-box green-notice">'.$message.'</div>' : $message);
 	}
+
 	/**
 	* Returns the amount of errors stored in the $errors array
 	* 
@@ -75,6 +81,7 @@ class Errors {
 	public function getCount() {
 		return count(self::$errors);
 	}
+
 	/**
 	* Add a string to the $errors array
 	* 
@@ -88,6 +95,12 @@ class Errors {
 	* Clear the errors array
 	*/
 	public static function clear() {
+		/*
+		//self::$errors = [];
+		if(self::hasErrors())
+			for($x = 0; $x < self::getCount(); $x++)
+				unset(self::$errors[$x]); //self::$errors[$x] = null;
+		*/
 		self::$errors = [];
 	}
 	
