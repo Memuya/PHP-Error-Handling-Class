@@ -40,7 +40,7 @@ class Errors {
 				case 2:
 					$css = 'yellow-notice';
 					break;
-				case default:
+				default:
 					$css = 'red-notice';
 					break;
 			}
