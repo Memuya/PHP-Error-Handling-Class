@@ -97,3 +97,11 @@ Using the clear() method allows you to clear all errors added so far
 ```PHP
 Error\Errors::clear();
 ```
+# Other Methods
+```PHP
+//Check if an error exist inside the errors array
+Error\Errors::hasErrors();
+
+//Counts the amount of errors currently in the errors array
+Error\Errors::getCount();
+```
