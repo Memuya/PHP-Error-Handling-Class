@@ -95,12 +95,6 @@ class Errors {
 	* Clear the errors array
 	*/
 	public static function clear() {
-		/*
-		//self::$errors = [];
-		if(self::hasErrors())
-			for($x = 0; $x < self::getCount(); $x++)
-				unset(self::$errors[$x]); //self::$errors[$x] = null;
-		*/
 		self::$errors = [];
 	}
 	
