@@ -4,7 +4,7 @@
 require_once 'classes/Errors.php';
 
 //use namespace
-use Error\Errors;
+use Memuya\ErrorHandler\Errors;
 ?>
 
 <!DOCTYPE html>
