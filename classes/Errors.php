@@ -7,7 +7,7 @@
  * @Author Mehmet Uyanik
  */
 
-namespace Error;
+namespace Memuya\ErrorHandler;
 
 class Errors {
 	private static $errors = [];
