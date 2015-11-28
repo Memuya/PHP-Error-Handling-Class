@@ -6,47 +6,47 @@ The Error class contains only static methods, so it does not have to be initiate
 
 ## 1. Use the namespace
 ```PHP
-use Error\Errors;
+use Memuya\ErrorHandler\Errors;
 ```
 or you can use it inline
 ```PHP
-Error\Errors::add("Error message here");
+Memuya\ErrorHandler\Errors::add("Error message here");
 ```
 
 ## 2. Add an error
 ```PHP
-Error\Errors::add("All fields are required");
+Errors::add("All fields are required");
 ```
 
 ## 3. Return the list of errors
 ```PHP
-return Error\Errors::display(0);
+return Errors::display(0);
 ```
 
 You may also pass a success message to be displayed if no errors were added.
 ```PHP
-return Error\Errors::display("Person successfully added!");
+return Errors::display("Person successfully added!");
 ```
 
 You can change the style of the notice box by passing through a second value through to the method. By default all error messages will be displayed in a red notice box and do not require a value to be passed through to the method. All success messages will be displayed in a green notice box.
 
 ### No Notice Box
 ```PHP
-return Error\Errors::display("Success Message", 0);
+return Errors::display("Success Message", 0);
 ```
 
 ### Red Error Notice
 ```PHP
-return Error\Errors::display("Success Message");
+return Errors::display("Success Message");
 ```
 ..is the same as..
 ```PHP
-return Error\Errors::display("Success Message", 1);
+return Errors::display("Success Message", 1);
 ```
 
 ### Yellow Error Notice
 ```PHP
-return Error\Errors::display("Success Message", 2);
+return Errors::display("Success Message", 2);
 ```
 
 ## Example (used inside a class)
@@ -63,13 +63,13 @@ class Person {
     
     if(empty($this->name) || empty($this->age)) {
       //Add an error
-      Error\Errors::add("All fields are required");
+      Errors::add("All fields are required");
     } else {
       //Add user here
     }
     
     //Display all errors to user or a success message
-    return Error\Errors::display("Person successfully added!");
+    return Errors::display("Person successfully added!");
   }
 }
 ```
@@ -89,19 +89,19 @@ If no errors have been added, a success message will be displayed.
 ## NOT displaying a success message
 If you do not want to display a success message, simply put a 0 (ZERO) into the displayErrors() method
 ```PHP
-return Error\Errors::display(0);
+return Errors::display(0);
 ```
 
 ## Clear All Errors
 Using the clear() method allows you to clear all errors added so far
 ```PHP
-Error\Errors::clear();
+Errors::clear();
 ```
 # Other Methods
 ```PHP
 //Check if an error exist inside the errors array
-Error\Errors::hasErrors();
+Errors::hasErrors();
 
 //Counts the amount of errors currently in the errors array
-Error\Errors::getCount();
+Errors::getCount();
 ```
