@@ -81,9 +81,11 @@ echo $person->add("Bob", 26); //Echo to display messages
 
 ## Output
 If an error is being displayed it will show.
+
 ![Error Message](http://i.imgur.com/ksh5y8Q.png)
 
 If no errors have been added, a success message will be displayed.
+
 ![Success Message](http://i.imgur.com/yW0QyHu.png)
 
 ## NOT displaying a success message
