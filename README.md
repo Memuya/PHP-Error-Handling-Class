@@ -89,7 +89,7 @@ If no errors have been added, a success message will be displayed.
 ![Success Message](http://i.imgur.com/yW0QyHu.png)
 
 ## NOT displaying a success message
-If you do not want to display a success message, simply put a 0 (ZERO) into the displayErrors() method
+If you do not want to display a success message, simply put a 0 (ZERO) into the display() method
 ```PHP
 return Errors::display(0);
 ```
